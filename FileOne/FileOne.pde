@@ -35,3 +35,16 @@ TBH=300;
 textFont(TBF,100);
 fill(0,0,0);
 text(TBT,TBX,TBY,TBW,TBH);
+
+
+
+
+PImage Image;
+float ImgX, Imgy, ImgW, ImgH;
+Image = loadImage();
+
+Imgx = width
+Imgy = height
+Imgw = width
+Imgh1 = height
+image(();
