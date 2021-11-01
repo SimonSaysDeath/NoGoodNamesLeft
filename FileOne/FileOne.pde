@@ -5,10 +5,6 @@ color black=#000000, white=#FFFFFF, magenta=#FF00FF, blue=#0000FF, magentaNight=
 float x=displayWidth*1/4, y=displayHeight*1/4, widthRect=displayWidth*1/2, heightRect=displayHeight*1/2;
 int thin=displayWidth*1/100, thick=thin*2, bgc;
 PFont TBF;
-/*
-String[] fontList = PFont.list(); //To list all fonts available on system
-printArray(fontList);
-*/
 TBF=createFont("Comic Sans MS",48);
 boolean nightMode=true, rbgc=true;
 if (rbgc==true) {
