@@ -10,7 +10,7 @@ boolean nightMode=true, rbgc=true;
 if (rbgc==true) {
 bgc=color(random(0,255),random(0,255),random(0,255));
 } else {
-  bgc=black;
+  bgc=white;
 };
 background(bgc);
 strokeWeight(thick);
@@ -23,11 +23,19 @@ fill=magenta;
 };
 stroke(stroke);
 fill(fill);
-rect(x, y, widthRect, heightRect, -999999999);
+rect(x-100, y-100, widthRect+200, heightRect+200);
 strokeWeight(thin);
 stroke(black);
 fill(white);
 rect(x+100, y+100, widthRect-200, heightRect-200,999999999);
+strokeWeight(thick);
+stroke(black);
+fill(white);
+rect(displayWidth*3/8, 0, displayWidth*1/4, displayHeight*1/4);
+strokeWeight(thin);
+stroke(black);
+fill(white);
+rect(0, 0, displayWidth*1/8/2, displayHeight*1/8/2);
 TBX=500;
 TBY=300;
 TBW=500;
@@ -40,11 +48,21 @@ text(TBT,TBX,TBY,TBW,TBH);
 
 
 PImage Image;
-float ImgX, Imgy, ImgW, ImgH;
-Image = loadImage();
+int Imgx, Imgy, Imgw, Imgh;
+Image = loadImage("KieranPIXELART.png"); //50,32,landscape
 
-Imgx = width
-Imgy = height
-Imgw = width
-Imgh1 = height
-image(();
+Imgx = displayWidth*3/8;
+Imgy = displayHeight*0/4;
+Imgw = displayWidth*1/4;
+Imgh = displayHeight*1/4;
+image(Image,Imgx,Imgy,Imgw,Imgh);
+
+PImage Image2;
+int Imgx2, Imgy2, Imgw2, Imgh2;
+Image2 = loadImage("Flag.png"); //100,56,landscape
+
+Imgx2 = displayWidth*0/1/2;
+Imgy2 = displayHeight*0/1/2;
+Imgw2 = displayWidth*1/8/2;
+Imgh2 = displayHeight*1/8/2;
+image(Image2,Imgx2,Imgy2,Imgw2,Imgh2);
