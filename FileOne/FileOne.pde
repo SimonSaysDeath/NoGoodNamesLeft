@@ -1,23 +1,16 @@
-fullScreen();
-//
+int BX, BY, BW, BH, reset, restart;
+char a='a', b='b', c='c', d='d', e='e', f='f', g='g', h='h', i='i', j='j', k='k', l='l', m='m', n='n', o='o', p='p', q='q', r='r', s='s', t='t', u='u', v='v', w='w', xx='x', yy='y', z='z', period='.', comma=',', expoint='!', questmark='?', quotemark='"';
+String depression="'-'";
+color black=#000000, white=#FFFFFF, magenta=#FF00FF, blue=#0000FF, magentaNight=#660066, blueNight=#000066, stroke, fill;
+float x=displayWidth*1/4, y=displayHeight*1/4, widthRect=displayWidth*1/2, heightRect=displayHeight*1/2;
+int thin=10, thick=thin*2, bgc;
+PFont TBF;
+boolean nightMode=true, rbgc=true;
+color un=#FF00FF, on=#AA00AA, CLR;
+String Button="Start";
 void setup() {
-  //
   fullScreen();
-  int TBX, TBY, TBW, TBH, reset, restart;
-  String TBT="Depression.", TEXTBOX;
-  char a='a', b='b', c='c', d='d', e='e', f='f', g='g', h='h', i='i', j='j', k='k', l='l', m='m', n='n', o='o', p='p', q='q', r='r', s='s', t='t', u='u', v='v', w='w', xx='x', yy='y', z='z', period='.', comma=',', expoint='!', questmark='?', quotemark='"';
-  String depression="'-'";
-  color black=#000000, white=#FFFFFF, magenta=#FF00FF, blue=#0000FF, magentaNight=#660066, blueNight=#000066, stroke, fill;
-  float x=displayWidth*1/4, y=displayHeight*1/4, widthRect=displayWidth*1/2, heightRect=displayHeight*1/2;
-  int thin=10, thick=thin*2, bgc;
-  PFont TBF;
-  TBX=475;
-  TBY=300;
-  TBW=475;
-  TBH=300;
-  reset=1;
-  restart=1;
-  boolean nightMode=true, rbgc=true;
+  //
   TBF=createFont("Comic Sans MS", 48);
   if (rbgc==true) {
     bgc=color(random(0, 255), random(0, 255), random(0, 255));
@@ -25,17 +18,26 @@ void setup() {
     bgc=white;
   };
   background(bgc);
-  strokeWeight(thick);
-  if (nightMode==true) {
-    stroke=blueNight;
-    fill=magentaNight;
+  background(#FFFFFF);
+  if (mouseX>=BX && mouseY>=BY && mouseX<=BX+BW && mouseY<=BY+BH) {
+    CLR = on;
+    fill(CLR);
+    stroke(#000000);
+    strokeWeight(5);
+    rect(BX-10, BY-10, BW+20, BH+20);
+    fill(#000000);
+    textSize(325);
+    text(Button, BX*1.1, BY*1.95);
   } else {
-    stroke=blue;
-    fill=magenta;
+    CLR = un;
+    fill(CLR);
+    stroke(#000000);
+    strokeWeight(5);
+    rect(BX, BY, BW, BH);
+    fill(#000000);
+    textSize(300);
+    text(Button, BX*1.1, BY*1.9);
   };
-  stroke(stroke);
-  fill(fill);
-  rect(x-100, y-100, widthRect+200, heightRect+200);
   strokeWeight(thin);
   stroke(black);
   fill(white);
@@ -50,7 +52,7 @@ void setup() {
   rect(0, 0, displayWidth*1/8/2, displayHeight*1/8/2);
   textFont(TBF, 75);
   fill(0, 0, 0);
-  text(TBT, TBX, TBY, TBW, TBH);
+  text(Exit, BX, BY, BW, BH);
 
   PImage Image;
   int Imgx, Imgy, Imgw, Imgh;
@@ -89,7 +91,7 @@ void draw() {
   circle(random(350, 1000), random(250, 500), random(25, 50));
   circle(random(500, 850), random(50, 700), random(25, 50));
   circle(random(425, 925), random(125, 675), random(25, 50));
-  circle(random(450, 900), random(75,625), random(25, 50));
+  circle(random(450, 900), random(75, 625), random(25, 50));
   strokeWeight(7.5);
   stroke(#000000);
   fill(#FFCC99);
@@ -108,3 +110,9 @@ void draw() {
   //face end//
   //
 }//end draw
+void mousePressed() {
+  if (mouseX>=BX && mouseY>=BY && mouseX<=BX+BW && mouseY<=BY+BH)Jump();
+}//End mousePressed
+
+void keyPressed() {
+}//End keyPressed
