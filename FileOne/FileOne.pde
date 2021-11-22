@@ -57,6 +57,10 @@ void draw() {
     text(Button, BX*1.05, BY*1.9);
   } else {
     CLR = un;
+    fill(#FFFFFF);
+    stroke(#FFFFFF);
+    strokeWeight(5);
+    rect(BX-10, BY-10, BW+20, BH+20);
     fill(CLR);
     stroke(#000000);
     strokeWeight(5);
