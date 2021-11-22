@@ -29,7 +29,7 @@ void draw() {
     circle(random(350, 1000), random(250, 500), random(25, 50));
     circle(random(500, 850), random(50, 700), random(25, 50));
     circle(random(425, 925), random(125, 675), random(25, 50));
-    circle(random(450, 900), random(75, 625), random(25, 50));
+    circle(random(475, 875), random(75, 625), random(25, 50));
     strokeWeight(7.5);
     stroke(#000000);
     fill(#FFCC99);
